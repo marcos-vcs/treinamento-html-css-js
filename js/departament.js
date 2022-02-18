@@ -12,11 +12,18 @@ function viewtablue()
         cell1.innerHTML = keys[i];
         cell2.innerHTML = localStorage.getItem(keys[i]);
         cell3.innerHTML = 
-        '<span style="font-size: 20px; word-spacing: 10px;">' 
-        + '<i class="fa-solid fa-pen-to-square"></i>'
+        '<span onclick="abreModalDelete()" style="font-size: 20px; word-spacing: 10px;">' 
+        + '<i style="cursor:pointer" class="fa-solid fa-pen-to-square"></i>'
         + '&nbsp;'
-        + '<i class="fa-solid fa-trash-alt"></i>'
+        + '<i style="cursor:pointer" class="fa-solid fa-trash-alt"></i>'
         + '</span>';
     }
 
 }
+
+function abreModalDelete() {
+    $("#deleteModal").modal({
+      show: true
+    });
+}
+  
