@@ -5,7 +5,7 @@ function viewtable() {
 
     for (i = 0; i < keys.length; i++) {
         if (localStorage.getItem(keys[i]).includes("{departament}")) {
-        var row = table.insertRow(i);
+        var row = table.insertRow(1);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
