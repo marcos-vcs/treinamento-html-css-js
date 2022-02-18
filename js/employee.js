@@ -94,6 +94,9 @@ function viewtable() {
       </div>`;
       }
   }
+
+  notFound();
+
 }
 
 function deleterow(id) {
@@ -114,7 +117,6 @@ function findByEmployee() {
   }
   var keys = Object.keys(localStorage);
   var r = keys.length;
-
   for (i = 0; i < r; i++) {
     if (localStorage.getItem(keys[i]).includes("{employee}") && localStorage.getItem(keys[i]).includes(employee)) {
       var row = table.insertRow(i + 1);
@@ -205,8 +207,10 @@ function findByEmployee() {
       </div>`;
     }
   }
-}
 
+    notFound();
+
+}
 
 function createEmployee() {
 var employee = document.getElementById("employeeNameCreate").value;
@@ -227,4 +231,15 @@ function abreModal(name) {
 $("#" + name).modal({
   show: true,
 });
+}
+
+function notFound(){
+
+  var table = document.getElementById("employee-list");
+  if(table.rows.length >= 2){
+    document.getElementById("not-found").style.display = "none";
+  }else{
+    document.getElementById("not-found").style.display = "block";
+  }
+
 }

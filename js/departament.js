@@ -93,6 +93,8 @@ function viewtable() {
         </div>`;
         }
     }
+    notFound()
+
 }
 
 function deleterow(id) {
@@ -112,6 +114,7 @@ function findByDepartament() {
         }
     }
     var keys = Object.keys(localStorage);
+    
     var r = keys.length;
   
     for (i = 0; i < r; i++) {
@@ -204,8 +207,10 @@ function findByDepartament() {
         </div>`;
       }
     }
-  }
-  
+
+    notFound();
+    
+}  
 
 function createDepartament() {
   var departament = document.getElementById("departamentNameCreate").value;
@@ -226,4 +231,17 @@ function abreModal(name) {
   $("#" + name).modal({
     show: true,
   });
+}
+
+function notFound(){
+  
+  var table = document.getElementById("departament-list");
+  document.getElementById("not-found").style.display = "none";
+
+  if(table.rows.length >= 3){
+    document.getElementById("not-found").style.display = "none";
+  }else{
+    document.getElementById("not-found").style.display = "block";
+  }
+
 }
