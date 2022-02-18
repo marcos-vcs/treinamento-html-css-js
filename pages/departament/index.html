@@ -5,9 +5,6 @@
         <!-- departament javascript -->
         <script src="../../js/departament.js"></script>
 
-        <!-- Reset css  -->
-        <link rel="stylesheet" href="css/reset.css" type="text/css">
-
         <!-- Font awsome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -68,7 +65,7 @@
                 
                     <div class="form-inline mb-5">
                       <div class="form-group mx-sm-3 mb-2">
-                        <input style="width: 25vw;" type="text" class="form-control" id="departamentName">
+                        <input style="width: 25vw;" type="text" class="form-control" id="departamentFind">
                       </div>
                       <button onclick="findByDepartament()" class="btn btn-primary mb-2 ml-2">Buscar</button>
                     </div>
@@ -130,63 +127,7 @@
                       <div class="form-row">
                         <div class="col mb-3">
                           <label for="validationCustom01">Nome do departamento</label>
-                          <input type="text" class="form-control" id="departamentName" placeholder="Nome" required>
-                          <div class="valid-feedback">
-                            Tudo certo!
-                          </div>
-                          <div class="invalid-feedback">
-                            Por favor, informe o nome do departamento!
-                          </div>
-                        </div>
-                      </div>
-            
-                      <button onclick="createDepartament()" class="btn btn-primary" type="submit">Enviar</button>
-                    </form>
-            
-                    <script>
-                      // Exemplo de JavaScript inicial para desativar envios de formulário, se houver campos inválidos.
-                      (function () {
-                        'use strict';
-                        window.addEventListener('load', function () {
-                          // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
-                          var forms = document.getElementsByClassName('needs-validation');
-                          // Faz um loop neles e evita o envio
-                          var validation = Array.prototype.filter.call(forms, function (form) {
-                            form.addEventListener('submit', function (event) {
-                              if (form.checkValidity() === false) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                              }
-                              form.classList.add('was-validated');
-                            }, false);
-                          });
-                        }, false);
-                      })();
-                    </script>
-            
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- MODAL DE EDIÇÃO -->
-            <div class="modal fade" id="editDepartament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Cadastrar Novo Departmento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-            
-                    <form class="needs-validation" novalidate>
-                      <div class="form-row">
-                        <div class="col mb-3">
-                          <label for="validationCustom01">Nome do departamento</label>
-                          <input type="text" class="form-control" id="departamentName" placeholder="Nome" required>
+                          <input type="text" class="form-control" id="departamentNameCreate" placeholder="Nome" required>
                           <div class="valid-feedback">
                             Tudo certo!
                           </div>

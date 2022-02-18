@@ -2,11 +2,10 @@ function viewtable() {
 
     var table = document.getElementById("departament-list");
     var keys = Object.keys(localStorage);
-    var r = keys.length;
 
-    for (i = 0; i < r; i++) {
+    for (i = 0; i < keys.length; i++) {
         if (localStorage.getItem(keys[i]).includes("{departament}")) {
-        var row = table.insertRow(i + 1);
+        var row = table.insertRow(i);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
@@ -54,7 +53,7 @@ function viewtable() {
                     <div class="form-row">
                     <div class="col mb-3">
                         <label for="validationCustom01">Nome do departamento</label>
-                        <input type="text" value="${value}" class="form-control" id="departamentName" placeholder="Nome" required>
+                        <input type="text" value="${value}" class="form-control" id="departamentNameEdit${keys[i]}" placeholder="Nome" required>
                         <div class="valid-feedback">
                         Tudo certo!
                         </div>
@@ -102,7 +101,7 @@ function deleterow(id) {
 }
 
 function findByDepartament() {
-    var departament = document.getElementById("departamentName").value;
+    var departament = document.getElementById("departamentFind").value;
     var departament = "{departament}" + departament;
     var table = document.getElementById("departament-list");
     for(i = 1; i < table.rows.length; i++) {
@@ -209,7 +208,7 @@ function findByDepartament() {
   
 
 function createDepartament() {
-  var departament = document.getElementById("departamentName").value;
+  var departament = document.getElementById("departamentNameCreate").value;
   var departament = "{departament}" + departament;
   var key = new Date().getTime();
   localStorage.setItem(key, departament);
@@ -217,7 +216,7 @@ function createDepartament() {
 }
 
 function editDepartament(id) {
-  var departament = document.getElementById("departamentName").value;
+  var departament = document.getElementById("departamentNameEdit" + id).value;
   var departament = "{departament}" + departament;
   localStorage.setItem(id, departament);
   location.reload();
