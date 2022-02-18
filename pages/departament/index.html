@@ -2,6 +2,9 @@
 <html lang="pt-br">
     <head>
 
+        <!-- departament javascript -->
+        <script src="../../js/departament.js"></script>
+
         <!-- Reset css  -->
         <link rel="stylesheet" href="css/reset.css" type="text/css">
 
@@ -24,7 +27,7 @@
 
         <title>Treinamento</title>
     </head>
-    <body>
+    <body onload="viewtablue()">
 
         <div class="container-fluid">
             
@@ -62,9 +65,45 @@
 
             <!-- BODY -->
             <div class="row">
-                <div class="col">
-                    Departamentos
+              <div class="col-1"></div>
+              <div class="col-10 shadow-lg p-3 mb-5 bg-white rounded">
+
+                <div class="row">
+                  <div class="col">
+                    <h1 style="font-size: 28px;" class="ml-3 my-3">Departamentos cadastrados</h1>
+                
+                    <form class="form-inline mb-5">
+                      <div class="form-group mx-sm-3 mb-2">
+                        <input style="width: 25vw;" type="text" class="form-control" id="search">
+                      </div>
+                      <button type="submit" class="btn btn-primary mb-2 ml-2">Buscar</button>
+                    </form>
+                  </div>
                 </div>
+
+                <div class="row">
+                  <div class="col">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Departamento</th>
+                          <th scope="col">Opções</th>
+                        </tr>
+                      </thead>
+                      <tbody id="departament-list">
+                        <tr>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+                </div>
+            
+
+            
+              </div>
+              <div class="col-1"></div>
             </div>
 
             <!-- FOOTER -->
@@ -82,5 +121,7 @@
 
         </div>
 
+
+        
     </body>
 </html>
