@@ -2,7 +2,7 @@ function viewtable() {
 
     var table = document.getElementById("departament-list");
     var keys = Object.keys(localStorage);
-
+    var row = table.insertRow(1);
     for (i = 0; i < keys.length; i++) {
         if (localStorage.getItem(keys[i]).includes("{departament}")) {
         var row = table.insertRow(1);
