@@ -109,7 +109,8 @@ function findByDepartament() {
     var r = keys.length;
 
     for(i = 1; i < table.rows.length; i++) {
-        if(table.rows[i].cells[1].innerHTML.includes(departament)) {
+
+        if(table.rows[i].cells[1].innerHTML.toLowerCase().includes(departament.toLowerCase())) {
             table.rows[i].style.display = "";
         } else {
             table.rows[i].style.display = "none";

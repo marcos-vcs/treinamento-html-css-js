@@ -111,7 +111,7 @@ function findByEmployee() {
   var r = keys.length;
 
   for(i = 1; i < table.rows.length; i++) {
-      if(table.rows[i].cells[1].innerHTML.includes(employee)) {
+      if(table.rows[i].cells[1].innerHTML.toLowerCase().includes(employee.toLowerCase())) {
           table.rows[i].style.display = "";
       } else {
           table.rows[i].style.display = "none";
