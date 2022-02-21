@@ -16,8 +16,7 @@ function viewtable() {
       cell1.innerHTML = keys[i];
       value = localStorage.getItem(keys[i]).replace("{employee}", "").split("{isPartOf}")[0];
       cell2.innerHTML = value;
-        value = localStorage.getItem(keys[i]).split("{isPartOf}")[1];
-        cell3.innerHTML = value;
+      cell3.innerHTML = localStorage.getItem(keys[i]).split("{isPartOf}")[1];
       cell4.innerHTML =
           `<span style="font-size: 20px; word-spacing: 10px;">` +
           `<i onclick="abreModal('editModal${keys[i]}'); loadSelectEdit();" style="cursor:pointer" class="fa-solid fa-pen-to-square"></i>` +
@@ -48,7 +47,7 @@ function viewtable() {
           <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
               <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Editar Departmento</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">Editar Dados do Funcionário</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
@@ -148,10 +147,11 @@ function createEmployee() {
 }
 function editEmployee(id) {
     var departament = document.getElementById("editSelect").value;
+        departament = "{isPartOf}" + departament;
     var employee = document.getElementById("employeeNameEdit" + id).value;
         employee = "{employee}" + employee;
-    departament = "{isPartOf}" + departament;
-    localStorage.setItem(id, employee + departament);
+    
+    localStorage.setItem(id, "" + employee + departament);
     location.reload();
 }
 
