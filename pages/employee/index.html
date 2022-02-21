@@ -47,7 +47,7 @@
                             <a class="nav-link" href="../../index.html">Inicio <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
-                            <a style="cursor: pointer;" class="nav-link" data-toggle="modal" data-target="#createEmployee">Novo Funcionário</a>
+                            <a style="cursor: pointer;" class="nav-link" data-toggle="modal" data-target="#createEmployee" onclick="loadSelect()">Novo Funcionário</a>
                           </li>
                         </ul>
                       </div>
@@ -80,6 +80,7 @@
                       <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nome do Funcionário</th>
+                        <th scope="col">Departamento</th>
                         <th scope="col">Opções</th> 
                       </tr>
                     </thead>
@@ -129,6 +130,7 @@
                   <div class="modal-body">
             
                     <form class="needs-validation" novalidate>
+
                       <div class="form-row">
                         <div class="col mb-3">
                           <label for="validationCustom01">Nome do Funcionário</label>
@@ -138,6 +140,17 @@
                           </div>
                           <div class="invalid-feedback">
                             Por favor, informe o nome do funcionário!
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <div class="col mb-3">
+                          <label for="validationCustom01">Departamento</label>
+                          <div>
+                            <select id="createSelect" class="form-control" aria-label="Default select example">
+                              <option selected>Selecione o departamento</option>
+                            </select>
                           </div>
                         </div>
                       </div>

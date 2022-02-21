@@ -6,16 +6,21 @@ function viewtable() {
 
   for (i = 0; i < r; i++) {
       if (localStorage.getItem(keys[i]).includes("{employee}")) {
+
       var row = table.insertRow(1);
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+
       cell1.innerHTML = keys[i];
-      value = localStorage.getItem(keys[i]).replace("{employee}", "");
+      value = localStorage.getItem(keys[i]).replace("{employee}", "").split("{isPartOf}")[0];
       cell2.innerHTML = value;
-      cell3.innerHTML =
+        value = localStorage.getItem(keys[i]).split("{isPartOf}")[1];
+        cell3.innerHTML = value;
+      cell4.innerHTML =
           `<span style="font-size: 20px; word-spacing: 10px;">` +
-          `<i onclick="abreModal('editModal${keys[i]}');" style="cursor:pointer" class="fa-solid fa-pen-to-square"></i>` +
+          `<i onclick="abreModal('editModal${keys[i]}'); loadSelectEdit();" style="cursor:pointer" class="fa-solid fa-pen-to-square"></i>` +
           "&nbsp;" +
           `<i onclick="abreModal('deleteModal${keys[i]}');" style="cursor:pointer" class="fa-solid fa-trash-alt"></i>` +
           "</span>" +
@@ -51,6 +56,7 @@ function viewtable() {
               <div class="modal-body">
       
               <form class="needs-validation" novalidate>
+
                   <div class="form-row">
                   <div class="col mb-3">
                       <label for="validationCustom01">Nome do Funcionário</label>
@@ -63,6 +69,17 @@ function viewtable() {
                       </div>
                   </div>
                   </div>
+
+                  <div class="form-row">
+                  <div class="col mb-3">
+                    <label for="validationCustom01">Departamento</label>
+                    <div>
+                      <select id="editSelect" class="form-control" aria-label="Default select example">
+                        <option selected>Selecione o departamento</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
       
                   <button onclick="editEmployee('${keys[i]}')" class="btn btn-primary" type="submit">Enviar</button>
               </form>
@@ -121,24 +138,79 @@ function findByEmployee() {
 }  
 
 function createEmployee() {
-var employee = document.getElementById("employeeNameCreate").value;
-employee = "{employee}" + employee;
-var key = new Date().getTime();
-localStorage.setItem(key, employee);
-location.reload();
+    var departament = document.getElementById("createSelect").value;
+    var employee = document.getElementById("employeeNameCreate").value;
+    employee = "{employee}" + employee;
+    var key = new Date().getTime();
+    departament = "{isPartOf}" + departament;
+    localStorage.setItem(key, employee + departament);
+    location.reload();
 }
-
 function editEmployee(id) {
-  var employee = document.getElementById("employeeNameEdit" + id).value;
-  var employee = "{employee}" + employee;
-  localStorage.setItem(id, employee);
-  location.reload();
+    var departament = document.getElementById("editSelect").value;
+    var employee = document.getElementById("employeeNameEdit" + id).value;
+        employee = "{employee}" + employee;
+    departament = "{isPartOf}" + departament;
+    localStorage.setItem(id, employee + departament);
+    location.reload();
 }
 
 function abreModal(name) {
 $("#" + name).modal({
   show: true,
 });
+}
+
+function loadSelect(){
+
+    var select = document.getElementById("createSelect");
+    var op = document.createElement("option");
+    op.text = "Selecione o departamento";
+    op.value = 1;
+    select.innerHTML = "";
+    select.appendChild(op)
+
+    var keys = Object.keys(localStorage);
+    var r = keys.length;
+    
+    for(i = 0; i < r; i++){
+        var value = localStorage.getItem(keys[i]);
+
+        if(value.includes("{departament}")){
+            var department = value.replace("{departament}", "");
+            var option = document.createElement("option");
+            option.text = department;
+            option.value = department;
+            select.add(option);
+        }
+        
+    }
+}
+
+function loadSelectEdit(){
+
+    var select = document.getElementById("editSelect");
+    var op = document.createElement("option");
+    op.text = "Selecione o departamento";
+    op.value = 1;
+    select.innerHTML = "";
+    select.appendChild(op)
+
+    var keys = Object.keys(localStorage);
+    var r = keys.length;
+    
+    for(i = 0; i < r; i++){
+        var value = localStorage.getItem(keys[i]);
+
+        if(value.includes("{departament}")){
+            var department = value.replace("{departament}", "");
+            var option = document.createElement("option");
+            option.text = department;
+            option.value = department;
+            select.add(option);
+        }
+        
+    }
 }
 
 function notFound(){
