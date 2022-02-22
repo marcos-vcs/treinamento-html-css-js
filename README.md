@@ -12,6 +12,7 @@
  ---
 ### Motivation
 Project developed during my second month of training at LG lugar de gente, following some guidelines from my training supervisor.
+The project uses localstorage to persist the information.
 
 ---
 #### Questions or suggestions?
