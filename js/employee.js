@@ -123,8 +123,6 @@ location.reload();
 function findByEmployee() {
   var employee = document.getElementById("employeeFind").value;
   var table = document.getElementById("employee-list");
-  var keys = Object.keys(localStorage);
-  var r = keys.length;
 
   for(i = 1; i < table.rows.length; i++) {
       if(table.rows[i].cells[1].innerHTML.toLowerCase().includes(employee.toLowerCase())) {

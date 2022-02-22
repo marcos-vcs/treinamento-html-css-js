@@ -105,8 +105,6 @@ function deleterow(id) {
 function findByDepartament() {
     var departament = document.getElementById("departamentFind").value;
     var table = document.getElementById("departament-list");
-    var keys = Object.keys(localStorage);
-    var r = keys.length;
 
     for(i = 1; i < table.rows.length; i++) {
 
