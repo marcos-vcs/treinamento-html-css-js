@@ -1,23 +1,23 @@
-## Treinamento de HTML, CSS E Javascript
+## HTML, CSS, and Javascript Training
 
-#### Para acessar o deploy **[`CLIQUE AQUI`](https://marcos-treinamento-html-css-js.netlify.app/)**
+#### To access the deployment **[`CLICK HERE`](https://marcos-treinamento-html-css-js.netlify.app/)**
 
 ---
-### Tecnologias usadas no desenvolvimento
+### Technologies used in development
  - Javascript
  - Jquery
  - Bootstrap 4.5
  - CSS
  - HTML5
  ---
-### Motivação
-Projeto desenvolvido durante meu segundo mês de treinamento na LG lugar de gente, seguindo algumas orientações do meu supervisor de treinamento.
+### Motivation
+Project developed during my second month of training at LG lugar de gente, following some guidelines from my training supervisor.
 
 ---
-#### Dúvidas ou sugestões?
-Sinta-se a vontade para abrir uma nova issue.
+#### Questions or suggestions?
+Feel free to open a new issue.
 
 ----
- **Obrigado por visitar este repositório!:sparkling_heart:**
+ **Thanks for visiting this repository!:sparkling_heart:**
  
- Se tiver gostado por favor deixe uma estrelinha.:star2:
+If you liked it, please leave a star.:star2:
