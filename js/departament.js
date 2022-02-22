@@ -152,3 +152,16 @@ function notFound(){
   }
 
 }
+
+function departamentQuantity(){
+    var keys = Object.keys(localStorage);
+    var keysInDepartament = 0;
+
+    keys.forEach(function(key) {
+        if(localStorage.getItem(key).includes("{departament}")){
+            keysInDepartament ++;
+        }
+    });
+
+    $("#quantity").append(keysInDepartament);
+}

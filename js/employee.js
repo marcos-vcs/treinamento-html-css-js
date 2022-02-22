@@ -223,3 +223,16 @@ function notFound(){
   }
 
 }
+
+function employeeQuantity(){
+    var keys = Object.keys(localStorage);
+    var keysInDepartament = 0;
+
+    keys.forEach(function(key) {
+        if(localStorage.getItem(key).includes("{employee}")){
+            keysInDepartament ++;
+        }
+    });
+
+    $("#quantity").append(keysInDepartament);
+}

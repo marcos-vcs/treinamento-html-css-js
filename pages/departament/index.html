@@ -24,7 +24,7 @@
 
         <title>Treinamento</title>
     </head>
-    <body onload="viewtable();">
+    <body onload="viewtable(); departamentQuantity();">
 
         <div class="container-fluid">
             
@@ -69,6 +69,14 @@
                       </div>
                       <button onclick="findByDepartament()" class="btn btn-primary mb-2 ml-2">Buscar</button>
                     </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div 
+                  class="col bg-dark text-left p-2" 
+                  style="color: #fff; font-size: 16px; font-weight: 700;" id="quantity">
+                    Total:
                   </div>
                 </div>
 
