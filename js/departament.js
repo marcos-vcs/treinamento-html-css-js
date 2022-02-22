@@ -165,3 +165,7 @@ function departamentQuantity(){
 
     $("#quantity").append(keysInDepartament);
 }
+
+function reload(){
+  location.reload();
+}

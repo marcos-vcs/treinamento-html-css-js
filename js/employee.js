@@ -236,3 +236,7 @@ function employeeQuantity(){
 
     $("#quantity").append(keysInDepartament);
 }
+
+function reload(){
+    location.reload();
+  }
