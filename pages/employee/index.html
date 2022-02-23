@@ -2,6 +2,9 @@
 <html lang="pt-br">
     <head>
 
+        <!-- DARK-MODE CSS -->
+        <link rel="stylesheet" href="../../css/dark-mode.css" type="text/css">
+
         <!-- employee javascript -->
         <script src="../../js/employee.js"></script>
 
@@ -25,14 +28,14 @@
 
         <title>Treinamento</title>
     </head>
-    <body onload="viewtable(); employeeQuantity();">
+    <body onload="viewtable(); employeeQuantity(); verifyMode();">
 
         <div class="container-fluid">
             
             <!-- NAVBAR || HEADER -->
             <div class="row">
               <div class="col">
-                  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
                       <a class="navbar-brand" href="../../index.html">
                         <div style="font-weight: 600;">
                           Treinamento
@@ -43,11 +46,19 @@
                       </button>
                       <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto">
-                          <li class="nav-item active">
-                            <a class="nav-link" href="../../index.html">Inicio <span class="sr-only">(current)</span></a>
-                          </li>
                           <li class="nav-item">
+                            <a class="nav-link" href="../../index.html">Inicio</a>
+                          </li>
+                          <li class="nav-item active">
                             <a style="cursor: pointer;" class="nav-link" data-toggle="modal" data-target="#createEmployee" onclick="loadSelect()">Novo Funcionário</a>
+                          </li>
+                          <li>
+                            <hr style="background-color: #fff;">
+                          </li>
+                          <li>
+                
+                            <div onclick="switchMode()" id="light-mode-button"></div>
+                
                           </li>
                         </ul>
                       </div>
@@ -58,7 +69,7 @@
           <!-- BODY -->
           <div class="row" style="margin-bottom: 70px;">
             <div class="col-1"></div>
-            <div class="col-10 shadow-lg p-3 mb-5 bg-white rounded">
+            <div id="table-container" class="col-10 shadow-lg p-3 mb-5 rounded">
 
               <div class="row">
                 <div class="col">
@@ -68,7 +79,7 @@
                     <div class="form-group mx-sm-3 mb-2">
                       <input style="width: 25vw; min-width: 220px;" type="text" class="form-control" id="employeeFind">
                     </div>
-                    <button onclick="findByEmployee()" class="btn btn-primary mb-2 ml-2">Buscar</button>
+                    <button id="search-button" onclick="findByEmployee()" class="mb-2 ml-2">Buscar</button>
                   </div>
                 </div>
               </div>
@@ -79,8 +90,8 @@
                 style="font-size: 16px; font-weight: 700;" id="quantity">
                   Total:
                 </div>
-                <div class="col-6 bg-dark p-2">
-                  <span class="float-right text-light">
+                <div id="reload" class="col-6 p-2">
+                  <span class="float-right">
                     <i onclick="reload();" style="cursor: pointer;" class="fa-solid fa-rotate-right"></i>
                   </span>
                 </div>
@@ -88,7 +99,7 @@
 
               <div class="row">
                 <div class="col table-responsive">
-                  <table class="table table-hover">
+                  <table id="table" class="table table-hover rounded">
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
@@ -116,13 +127,13 @@
           </div>
 
             <!-- FOOTER -->
-            <div class="row fixed-bottom bg-light shadow-lg p-3">
-              <div class="col" style="font-size: 18px;">
+            <div class="row fixed-bottom bg-light shadow-lg">
+              <div id="footer" class="col p-3" style="font-size: 18px;">
                   
                   <p style="text-align: center; margin-top: 20px;">
                       2022&copy; - Todos os direitos reservador a Marcos Sousa. &nbsp;
                       <a href="https://github.com/marcosviniciocardososousa/treinamento-html-css-js" target="blank" style="text-decoration: none; color: #000;">
-                          <i style="font-size: 28px;" class="fa-brands fa-github-square"></i>
+                          <i id="github-icon" style="font-size: 28px;" class="fa-brands fa-github-square"></i>
                       </a>
                   </p>
               </div>

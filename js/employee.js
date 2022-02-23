@@ -237,4 +237,121 @@ function employeeQuantity(){
 
 function reload(){
     location.reload();
-  }
+}
+
+function switchMode(){
+    if(returnAtualMode() == "dark"){
+        lightMode();
+    }else{
+        darkMode();
+    }
+}
+
+function verifyMode(){
+
+    if(returnAtualMode() == "dark"){
+        darkMode();
+    }else{
+        lightMode();
+    }
+
+}
+
+function returnAtualMode(){
+    return window.localStorage.getItem("mode");
+}
+
+function darkMode(){
+
+    window.localStorage.setItem("mode", "dark");
+
+    var btn = document.getElementById("light-mode-button");
+    btn.innerHTML = `<i style="font-size: 20px;" 
+    class="fa-solid fa-moon text-light px-2 py-2"></i>`;
+
+    var body = document.body;   
+    body.classList.add("dark-mode");
+
+    var navbar = document.getElementById("navbar");    
+    navbar.classList.remove("navbar-light-mode");
+    navbar.classList.add("dark-mode");
+
+    var githubIcon = document.getElementById("github-icon");
+    githubIcon.classList.add("text-light");
+    githubIcon.classList.remove("text-dark");
+
+    var footer = document.getElementById("footer");
+    footer.classList.add("footer-dark-mode");
+    
+    var aboveTable = document.getElementById("quantity");
+    aboveTable.classList.remove("bg-dark");
+    aboveTable.classList.remove("text-light");
+    aboveTable.classList.add("bg-light");
+    aboveTable.classList.add("text-dark");
+
+    var reload = document.getElementById("reload");
+    reload.classList.remove("bg-dark");
+    reload.classList.remove("text-light");
+    reload.classList.add("bg-light");
+    reload.classList.add("text-dark");
+
+    var tableContainer = document.getElementById("table-container");
+    tableContainer.style.backgroundColor = "#99928e";
+
+    var searchButton = document.getElementById("search-button");
+    searchButton.classList.remove("btn");
+    searchButton.classList.remove("btn-primary");
+    searchButton.classList.add("btn");
+    searchButton.classList.add("btn-dark");
+
+    var table = document.getElementById("table");
+    table.classList.remove("table-light");
+    table.classList.add("table-dark");
+}
+
+function lightMode(){
+
+    window.localStorage.setItem("mode", "light");
+
+    var btn = document.getElementById("light-mode-button");
+    btn.innerHTML = `<i  style="font-size: 20px; color: rgb(255, 255, 0);" class="fa-solid fa-sun px-2 py-2""></i>`;
+
+    var body = document.body;    
+    body.classList.remove("dark-mode");
+
+    var navbar = document.getElementById("navbar");
+    navbar.classList.add("navbar-light-mode");
+    
+    var githubIcon = document.getElementById("github-icon");
+    githubIcon.classList.add("text-dark");
+    githubIcon.classList.remove("text-light");
+
+    var footer = document.getElementById("footer");
+    footer.classList.remove("footer-dark-mode");
+
+    var aboveTable = document.getElementById("quantity");
+    aboveTable.classList.remove("bg-light");
+    aboveTable.classList.remove("text-dark");
+    aboveTable.classList.add("bg-dark");
+    aboveTable.classList.add("text-light");
+
+    var reload = document.getElementById("reload");
+    reload.classList.remove("bg-light");
+    reload.classList.remove("text-dark");
+    reload.classList.add("bg-dark");
+    reload.classList.add("text-light");
+
+    var tableContainer = document.getElementById("table-container");
+    tableContainer.style.backgroundColor = "#fff";
+
+    var searchButton = document.getElementById("search-button");
+    searchButton.classList.remove("btn");
+    searchButton.classList.remove("btn-dark");
+    searchButton.classList.add("btn");
+    searchButton.classList.add("btn-primary");
+
+    var table = document.getElementById("table");
+    table.classList.remove("table-dark");
+    table.classList.add("table-light");
+
+}
