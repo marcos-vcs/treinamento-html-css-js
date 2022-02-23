@@ -20,7 +20,7 @@ function viewtable() {
             "</span>" +
             `<div id="deleteModal${keys[i]}" class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
-                <div class="modal-content">
+                <div class="modal-content text-dark">
                     <div class="modal-header">
                     <h5 class="modal-title">Tem certeza que deseja excluir?</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -40,7 +40,7 @@ function viewtable() {
             `<div class="modal fade" id="editModal${keys[i]}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content text-dark">
                 <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Editar Departmento</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -307,5 +307,11 @@ function lightMode(){
     createModalBtn.classList.remove("btn-dark");
     createModalBtn.classList.add("btn");
     createModalBtn.classList.add("btn-primary");
+
+    var deleterow = document.getElementsByClassName("delete-row");
+    deleterow.classList.remove("bg-dark");
+    deleterow.classList.remove("text-light");
+    deleterow.classList.add("bg-light");
+    deleterow.classList.add("text-dark");
 
 }
