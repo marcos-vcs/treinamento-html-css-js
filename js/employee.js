@@ -74,7 +74,7 @@ function viewtable() {
                     <label for="validationCustom01">Departamento</label>
                     <div>
                       <select id="editSelect" class="form-control" aria-label="Default select example">
-                        <option selected>Selecione o departamento</option>
+                        <option selected value="Não informado">Selecione o departamento</option>
                       </select>
                     </div>
                   </div>
