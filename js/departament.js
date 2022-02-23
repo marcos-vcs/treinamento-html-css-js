@@ -236,6 +236,19 @@ function darkMode(){
     var table = document.getElementById("table");
     table.classList.remove("table-light");
     table.classList.add("table-dark");
+
+    var createModal = document.getElementById("create-modal");
+    createModal.classList.remove("bg-light");
+    createModal.classList.remove("text-dark");
+    createModal.classList.add("bg-dark");
+    createModal.classList.add("text-light");
+
+    var createModalBtn = document.getElementById("create-modal-btn");
+    createModalBtn.classList.remove("btn");
+    createModalBtn.classList.remove("btn-primary");
+    createModalBtn.classList.add("btn");
+    createModalBtn.classList.add("btn-success");
+
 }
 
 function lightMode(){
@@ -282,5 +295,17 @@ function lightMode(){
     var table = document.getElementById("table");
     table.classList.remove("table-dark");
     table.classList.add("table-light");
+
+    var createModal = document.getElementById("create-modal");
+    createModal.classList.remove("bg-dark");
+    createModal.classList.remove("text-light");
+    createModal.classList.add("bg-light");
+    createModal.classList.add("text-dark");
+
+    var createModalBtn = document.getElementById("create-modal-btn");
+    createModalBtn.classList.remove("btn");
+    createModalBtn.classList.remove("btn-dark");
+    createModalBtn.classList.add("btn");
+    createModalBtn.classList.add("btn-primary");
 
 }
